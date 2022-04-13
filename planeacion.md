@@ -31,6 +31,8 @@ En caso de **Develar**
 - Que los archivos estén dañados
 - Que no se tenga permiso para leer o escribir
 alguno de los archivos
+- Que nos pasen una imágen en formato no válido
+- Que el mensaje esté en un formato no válido (no en texto plano)
 - Que el tamaño del mensaje codificado supere
 la cantidad de bytes en la imágen
 - Que el texto contenga caracteres no válidos
@@ -38,6 +40,7 @@ la cantidad de bytes en la imágen
 válido.
 - Que la imagen sea demasiado grande para procesarla
 en memoria
+
 
 -----
 
@@ -52,27 +55,26 @@ en memoria
 #### Lógica primaria
 Usar cualquier funcionalidad para componer el algoritmo
 base de:
-- Ocultar
+- Ocultar: 
 - Develar
 
-#### Lectura/Escritura
+#### Lectura/Escritura IO
 - De un path devolver matriz de pixeles
 - De matriz de pixeles se crea una imágen
 - De un path devolver el texto plano (string)
 - De texto plano se crea un archivo de texto
 - Validar existencia, integridad y permisos de archivos
-- (Opcional) Validar tamaño al cargar en memoria
 
 #### Codificador/Decodificador
 - Definir un código (alfabeto y número de bits)
 - Definir un símbolo de fin de mensaje
-- Obtener binario a partir de mensaje
-- Obtener mensaje a partir de binario
+- Obtener binario a partir de mensaje				foo(mensaje) -> bits
+- Obtener mensaje a partir de binario				foo(bots) -> mensaje
 - Validar que el tamaño al codificar el mensaje sea
 de cierto tamaño
 - Detectar códigos no válidos al codificar/decodificar
 
 #### Método LSB
 Usando el bit menos significativo (LSB):
-- Guardar un binario en una matríz de pixeles
-- Extraer el binario de una matríz de pixeles
+- Guardar un binario en una matríz de pixeles       foo(bits, pixels) -> pixels
+- Extraer el binario de una matríz de pixeles		foo(pixels) -> bits
