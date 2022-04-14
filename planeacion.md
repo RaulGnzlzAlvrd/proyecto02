@@ -46,26 +46,26 @@ en memoria
 
 ## Agrupando funcionalidades
 
-#### Interfaz de usuario:
+#### Interfaz de usuario: (Beca)
 - Tomar los parámetros y validar que sean correctos.
 - Mandar llamar las funcionalidades base del programa
 (ocultar, develar) con los parámetros. 
 - Imprimir mensajes o excepciones al usuario
 
-#### Lógica primaria
+#### Lógica primaria (Raúl)
 Usar cualquier funcionalidad para componer el algoritmo
 base de:
 - Ocultar: 
 - Develar
 
-#### Lectura/Escritura IO
+#### Lectura/Escritura IO (Miriam)
 - De un path devolver matriz de pixeles
 - De matriz de pixeles se crea una imágen
 - De un path devolver el texto plano (string)
 - De texto plano se crea un archivo de texto
 - Validar existencia, integridad y permisos de archivos
 
-#### Codificador/Decodificador
+#### Codificador/Decodificador (Beca)
 - Definir un código (alfabeto y número de bits)
 - Definir un símbolo de fin de mensaje
 - Obtener binario a partir de mensaje				foo(mensaje) -> bits
@@ -74,7 +74,7 @@ base de:
 de cierto tamaño
 - Detectar códigos no válidos al codificar/decodificar
 
-#### Método LSB
+#### Método LSB (Raúl)
 Usando el bit menos significativo (LSB):
 - Guardar un binario en una matríz de pixeles       foo(bits, pixels) -> pixels
 - Extraer el binario de una matríz de pixeles		foo(pixels) -> bits
