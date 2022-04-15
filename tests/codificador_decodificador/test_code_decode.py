@@ -14,8 +14,12 @@ class TestCodeDecode(TestCase):
         esperado = "AH SI SOY"
         obtenido = get_mensaje(bits)
         self.assertEqual(obtenido, esperado)
+        bits2 = "00000001111101010010010001101010010011101100011011010101111"
+        esperado2 = "AH SI SOY"
+        obtenido2 = get_mensaje(bits2)
+        self.assertEqual(obtenido2, esperado2)
 
-    def valida_tamanio(self):
+    def test_valida_tamanio(self):
         mensaje = "AH SI SOY"
         limite_valido = 50
         obtenido = valida_tamanio(mensaje, limite_valido)
