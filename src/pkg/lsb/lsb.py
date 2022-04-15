@@ -37,8 +37,16 @@ def guarda_bits(bits, matriz_pixeles):
 
 def extrae_bits(matriz_pixeles):
     """
-    matriz_pixeles: matriz de numpy
+    Saca los bits menos significativos de una matriz de pixeles
+    y los devuelve como cadena de bits
+
+    params:
+    matriz_pixeles: matriz de numpy de 3 dimensiones
 
     return string de ceros y unos
     """
-    pass
+    aplanada = matriz_pixeles.reshape(-1)
+    bits = ""
+    for number in aplanada:
+        bits += str(number & 1)
+    return bits
