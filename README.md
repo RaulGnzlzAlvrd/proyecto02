@@ -18,5 +18,5 @@
 ## Instrucciones de testeo
 Para ejecutar los tests, desde el directorio raíz (este mismo directorio) ejecutar:
 ```
-python -Bm unittest
+python -Bm unittest -v
 ```

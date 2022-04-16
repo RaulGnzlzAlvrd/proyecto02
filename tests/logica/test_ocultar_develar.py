@@ -35,7 +35,7 @@ class TestOcultarDevelar(TestCase):
     def test_matriz_imperceptible(self):
         try:
             ocultar(self.img_path, self.msg_path, self.modified_img_path)
-            pixeles = get_pixeles_imagen(self.img_path)
+            pixels = get_pixeles_imagen(self.img_path)
             modified_pixels = get_pixeles_imagen(self.modified_img_path)
             result = np.testing.assert_allclose(pixels, modified_pixels, 1)
             self.assertIsNone(result)
