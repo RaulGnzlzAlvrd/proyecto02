@@ -9,10 +9,10 @@ class TestInterfaz(TestCase):
     def setUp(self):
         base_dir = "./tests/assets/"
         self.msg_path = base_dir + "msg.txt"
-        self.img_path = base_dir + "img.png"
+        self.img_path = base_dir + "img.jpg"
         self.modified_img_path = base_dir + "modified_img.png"
-        self.normal_img_path = base_dir + "normal_img.png"
-        self.msg_revealed_path = base_dir + "msg_revealed_path.txt"
+        self.lsg_img_path = base_dir + "lsb_img.png"
+        self.msg_revealed_path = base_dir + "msg_revealed.txt"
         if os.path.exists(self.modified_img_path):
             os.remove(self.modified_img_path)
         if os.path.exists(self.msg_revealed_path):
@@ -29,7 +29,7 @@ class TestInterfaz(TestCase):
                 os.remove(self.modified_img_path)
 
     def test_unhide(self):
-        sys.argv = ["_", "-u", self.normal_img_path, self.msg_revealed_path]
+        sys.argv = ["_", "-u", self.lsb_img_path, self.msg_revealed_path]
         try:
             self.assertStdout("")
             self.assertTrue(os.path.exists(self.msg_revealed_path))
@@ -60,10 +60,10 @@ Ejemplos:
     python -B src/main.py -h {self.msg_path} {self.img_path} {self.modified_img_path}
 
     Para develar
-    python -B src/main.py -u {self.normal_img_path} {self.msg_revealed_path}
+    python -B src/main.py -u {self.lsb_img_path} {self.msg_revealed_path}
 """
         self.assertStdout(esperado(sys.argv[1:]))
-        sys.argv = ["_", "-u", self.normal_img_path, self.msg_revealed_path, self.img_path]
+        sys.argv = ["_", "-u", self.lsb_img_path, self.msg_revealed_path, self.img_path]
         self.assertStdout(esperado(sys.argv[1:]))
         sys.argv = ["_", "-u"]
         self.assertStdout(esperado(sys.argv[1:]))
