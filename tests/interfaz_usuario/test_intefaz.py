@@ -11,7 +11,7 @@ class TestInterfaz(TestCase):
         self.msg_path = base_dir + "msg.txt"
         self.img_path = base_dir + "img.jpg"
         self.modified_img_path = base_dir + "modified_img.png"
-        self.lsg_img_path = base_dir + "lsb_img.png"
+        self.lsb_img_path = base_dir + "lsb_img.png"
         self.msg_revealed_path = base_dir + "msg_revealed.txt"
         if os.path.exists(self.modified_img_path):
             os.remove(self.modified_img_path)
