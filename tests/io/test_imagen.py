@@ -22,20 +22,23 @@ class TestImagen(TestCase):
                     [193,  70,  96],
                     [236,  79,  80],
                     [159, 131, 196]]])
-        self.path_file = "../img_test.png"
+        base_dir = "./tests/assets/"
+        self.img_path = base_dir + "img4x3.png"
+        self.img_copy_path = base_dir + "img4x3_copy.png"
+        if os.path.exists(self.img_copy_path):
+            os.remove(self.img_copy_path)
 
     def test_get_pixeles_imagen(self):
-        obtenido = get_pixeles_imagen(self.path_file)
-        resultado = np.testing.assert_array_equal(obtenido, self.pixeles)
+        pixeles_leidos = get_pixeles_imagen(self.img_path)
+        resultado = np.testing.assert_array_equal(self.pixeles, pixeles_leidos)
         self.assertIsNone(resultado)
 
     def test_crea_imagen(self):
-        path_nuevo = "../img_test2.png"
         try:
-            crea_imagen(self.pixeles, path_nuevo)
-            self.assertTrue(os.path.exists(path_nuevo))
-            with Image.open(path_nuevo) as img:
-                self.assertEqual(img.size, self.pixeles.shape[:-1])
+            crea_imagen(self.pixeles, self.img_copy_path)
+            self.assertTrue(os.path.exists(self.img_copy_path))
+            with Image.open(self.img_copy_path) as img_copy:
+                self.assertEqual(img_copy.size, self.pixeles.shape[:-1])
         finally:
-            if os.path.exists(path_nuevo):
-                os.remove(path_nuevo)
+            if os.path.exists(self.img_copy_path):
+                os.remove(self.img_copy_path)
