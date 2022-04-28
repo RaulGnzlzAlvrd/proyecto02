@@ -3,7 +3,12 @@ def leer(archivo):
     archivo: string
     return string con el texto del archivo
     """
-    pass
+    documento= open(archivo)
+    texto= documento.read()
+    cadena_nueva=texto.replace("\n", "")
+    documento.close()
+    return cadena_nueva
+
 
 
 def escribe(texto, path_destino):
@@ -16,4 +21,7 @@ def escribe(texto, path_destino):
 
     return None
     """
-    pass
+    document=open(path_destino, 'w')
+    document.write(texto)
+    document.close()
+    return None
