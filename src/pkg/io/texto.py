@@ -6,6 +6,7 @@ def leer(archivo):
     documento= open(archivo)
     texto= documento.read()
     cadena_nueva=texto.replace("\n", "")
+    documento.close()
     return cadena_nueva
 
 
