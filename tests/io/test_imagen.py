@@ -21,7 +21,7 @@ class TestImagen(TestCase):
                    [[232, 222,  10],
                     [193,  70,  96],
                     [236,  79,  80],
-                    [159, 131, 196]]])
+                    [159, 131, 196]]], dtype="uint8")
         base_dir = "./tests/assets/"
         self.img_path = base_dir + "img4x3.png"
         self.img_copy_path = base_dir + "img4x3_copy.png"
@@ -38,7 +38,7 @@ class TestImagen(TestCase):
             crea_imagen(self.pixeles, self.img_copy_path)
             self.assertTrue(os.path.exists(self.img_copy_path))
             with Image.open(self.img_copy_path) as img_copy:
-                self.assertEqual(img_copy.size, self.pixeles.shape[:-1])
+                self.assertEqual(img_copy.size, self.pixeles.shape[-2::-1])
         finally:
             if os.path.exists(self.img_copy_path):
                 os.remove(self.img_copy_path)
