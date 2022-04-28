@@ -18,8 +18,10 @@ def crea_imagen(matriz_pixels, path_destino):
     path_destino: string
 
     return None
-    """
     a = np.array(matriz_pixels)
     np.savetxt(path_destino, a, delimiter =', ')
+    """
+    pil_image=Image.fromarray(matriz_pixels).save(path_destino)
+    
     return None
     
