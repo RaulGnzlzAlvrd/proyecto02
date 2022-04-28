@@ -22,4 +22,4 @@ def ocultar(path_mensaje, path_imagen, path_destino):
         raise Exception("Mensaje demasiado grande")
     mensaje_codificado = get_bits(mensaje)
     pixeles_modificados = guarda_bits(mensaje_codificado, pixeles)
-    crea_imagen(pixeles_modificados)
+    crea_imagen(pixeles_modificados, path_destino)
