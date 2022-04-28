@@ -22,7 +22,7 @@ class TestLSB(TestCase):
                    [[232, 222,  11],
                     [237,  79,  80],
                     [159, 131, 196]]])
-        self.bits_extraidos = "100101101001110110"
+        self.bits_extraidos = "100101101001110"
 
     def test_guarda_bits(self):
         obtenido = guarda_bits(self.bits, self.pixeles)

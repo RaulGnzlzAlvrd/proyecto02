@@ -47,6 +47,14 @@ def extrae_bits(matriz_pixeles):
     """
     aplanada = matriz_pixeles.reshape(-1)
     bits = ""
+    contador = 1
+    cadena = ""
     for number in aplanada:
-        bits += str(number & 1)
+        cadena += str(number & 1)
+        if contador % 5 == 0:
+            bits += cadena
+            if cadena == "11011":
+                break
+            cadena = ""
+        contador += 1
     return bits
