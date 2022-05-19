@@ -5,6 +5,11 @@
 - González Alvarado Raúl: 313245312
 - Novella Jiménez Maria Rebeca: 313143926
 
+## Descripción
+Es un programa para ocultar texto dentro de imágenes, usando la técnica de LSB, también funciona para decodificar un mensaje en una imágen con un texto oculto.
+
+**Nota:** El mensaje a ocultar solo puede contener letras mayúsculas del inglés (sin Ñ) y espacios en blanco. Tampoco puede contener saltos de línea ni otros caracteres especiales.
+
 ## Instrucciones de uso
 - Instalar dependencias `pip install -r requirements.txt`
 - Para ejecutar depende de la acción a realizar:
@@ -18,5 +23,5 @@
 ## Instrucciones de testeo
 Para ejecutar los tests, desde el directorio raíz (este mismo directorio) ejecutar:
 ```
-python -Bm unittest -v
+python -Bm unittest discover -v
 ```
